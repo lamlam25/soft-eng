@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 500px at -10% -10%, #60a5fa55, transparent 60%),
+    radial-gradient(900px 500px at 110% 0%, #a78bfa55, transparent 60%),
+    radial-gradient(1000px 700px at 50% 120%, #22d3ee33, transparent 70%),
+    linear-gradient(145deg, #f8fafc 0%, #eef2ff 45%, #ecfeff 100%);
+  color: #0f172a;
+}
+
+.glass {
+  border: 1px solid #cbd5e199;
+  background: linear-gradient(135deg, #ffffffcc, #f8fafccc);
+  backdrop-filter: blur(14px);
+}
+
+.card-shadow {
+  box-shadow:
+    0 20px 40px #0f172a1a,
+    inset 0 1px 0 #ffffff;
+}
+
+.gradient-title {
+  background: linear-gradient(92deg, #4338ca 0%, #7c3aed 45%, #0ea5e9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.neo-panel {
+  border: 1px solid #cbd5e199;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #ffffffd9, #f8fafcd9);
+  box-shadow: 0 20px 40px #0f172a14;
+  backdrop-filter: blur(12px);
+}
+
+.lift {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.lift:hover {
+  transform: translateY(-4px);
+  border-color: #818cf8;
+  box-shadow: 0 26px 45px #4338ca22;
+}
+
+.glow-ring {
+  box-shadow:
+    0 0 0 1px #cbd5e1,
+    0 0 0 4px #6366f122,
+    0 12px 30px #4338ca22;
+}
+
+.animated-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: -120%;
+  background: conic-gradient(from 0deg, #22d3ee, #6366f1, #a855f7, #22d3ee);
+  animation: spin 9s linear infinite;
+  opacity: 0.16;
+}
+
+.animated-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
